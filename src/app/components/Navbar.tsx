@@ -16,15 +16,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "#contact" },
+    { name: "Sobre", href: "/about" },
+    { name: "Serviços", href: "/services" },
+    { name: "Contato", href: "#contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container px-4 flex h-14 items-center mx-auto">
+    <header className="sticky w-full top-0 z-50  border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container max-w-7xl px-8 md:px-6 flex h-14 items-center mx-auto">
         {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
@@ -33,7 +32,7 @@ export default function Navbar() {
               className="mr-2 px-0 text-base hover:bg-transparent focus:ring-0 md:hidden"
             >
               <Menu className="h-6 w-6" />
-              <span className="sr-only">Toggle Menu</span>
+              <span className="sr-only">Menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="top" className="w-full">
@@ -54,7 +53,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
               >
                 <Button
-                  className="mt-4 w-full"
+                  className="mt-4 w-full bg-green-600"
                   onClick={() => setIsOpen(false)}
                 >
                   Fale no Whatsapp
@@ -67,12 +66,12 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex flex-1 items-center justify-center md:justify-start">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bold">LOGO</span>
+            <span className="font-bold">Logo</span>
           </Link>
         </div>
 
         {/* Desktop Menu */}
-        <NavigationMenu className="hidden md:flex">
+        <NavigationMenu className="hidden md:flex ">
           <NavigationMenuList>
             {menuItems.map((item) => (
               <NavigationMenuItem key={item.name}>
@@ -93,7 +92,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button>Fale no Whatsapp</Button>
+            <Button className="bg-green-600">Fale no Whatsapp</Button>
           </a>
         </div>
       </div>
