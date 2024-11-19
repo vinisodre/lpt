@@ -79,6 +79,10 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+      - name: Configure GitHub Pages
+        run: |
+          echo "static: true" >> github-pages.yml
+          echo "  - images" >> github-pages.yml
 
   # Deployment job
   deploy:
